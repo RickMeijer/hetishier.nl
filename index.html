@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Het is Hier</title>
     <style>
       body {
         display: flex;
@@ -13,15 +13,50 @@
         justify-content: center;
         min-height: 100vh;
         margin: 0;
+        background-color: hsl(0, 0%, 95%);
+        color: hsl(0, 0%, 5%);
+      }
+      body {
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: hsl(0, 0%, 5%);
+          color: hsl(0, 0%, 95%);
+        }
       }
       h1 {
         font-size: 20vw;
         margin: 0;
+
+        line-height: 1;
+      }
+      a {
+        --color: hsl(290, 66%, 66%);
+        text-decoration: none;
+        position: relative;
+        color: var(--color);
+      }
+      a::after {
+        position: absolute;
+        content: "";
+        height: 1em;
+        width: 100%;
+        bottom: 0;
+        display: block;
+        background: var(--color);
+        transition: 0.2s ease height;
+      }
+      a:focus {
+        outline: none;
+      }
+      a:focus::after,
+      a:hover::after {
+        height: 0.5em;
       }
     </style>
   </head>
   <body>
-    <h1>Hier.</h1>
-    <p><a href="mailto:info@rickmeijer.net">hier</a> is alles wat je nodig hebt.</p>
+    <a href="mailto:info@rickmeijer.net"><h1>Hier.</h1></a>
+    <p>is alles dat je nodig hebt.</p>
   </body>
 </html>
